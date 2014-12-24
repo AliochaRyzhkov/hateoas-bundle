@@ -254,7 +254,9 @@ services:
 
   hateoas.raml.navigator_factory:
     class: GoIntegro\Bundle\HateoasBundle\DependencyInjection\Factory\RamlNavigatorFactory
-    arguments: [@kernel, @hateoas.raml.parser]
+    arguments:
+      - @hateoas.raml.parser
+      - %go_integro_hateoas.raml_doc%
 
   hateoas.raml.navigator:
     class: GoIntegro\Raml\DocNavigator
